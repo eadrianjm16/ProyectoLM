@@ -1,0 +1,248 @@
+
+/* Reset y base: */
+* { 
+  margin: 0; 
+  padding: 0; 
+}
+body{ 
+  font-family: system-ui, Arial, sans-serif; 
+}
+a{ 
+  color: white;
+  text-decoration: none; 
+}
+
+
+/* ====== INDEX ====== */
+/* Cabecera */
+.cabecera{
+  background:black;
+  max-width: 100%;
+  margin: 0 auto;                 /*Para centrar */
+  padding: 16px;
+  display: flex;                  /* FLEX */
+  align-items: center;            /* eje vertical */
+  justify-content: space-between; /* separación logo / nav */
+  gap: 35px;
+}
+.titulo{ 
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+}
+.logo{
+  display:flex;                /* FLEX para alinear logo + texto */
+  align-items:center;
+  gap:10px;
+}
+.logo img{ 
+  height:42px; 
+}
+
+
+/* Navegación */
+.nav{
+  display:flex;                /* FLEX */
+  gap:2px;                     /* espacio entre enlaces */
+  flex-wrap: wrap;
+}
+.nav a{
+  padding: 8px ;
+}
+.nav a.activo, .nav a:hover{
+  color: #2768F5;
+}
+
+
+/* ====== Fondo ====== */
+.seccion1{
+  position: relative;
+  height: 70vh;
+}
+/* Contenedor de la imagen */
+.fondo{
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+.fondo img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;              /* cubre el área entera */
+  object-position: center;
+}
+/* Capa oscura */
+.contraste{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);    /* color de capa */
+}
+/* Contenido centrado */
+.banner{
+  position: relative;
+  height: 100%;
+  display: flex;                /* FLEX vertical */
+  flex-direction: column;
+  align-items: center;          /* texto alineado al centro */
+  justify-content: center;      /* centrado vertical */
+  gap: 10px;
+  color: white;
+  text-align: center;
+}
+/* Botón negro con texto blanco */
+.btn{
+  display: flex;           /* FLEX para centrar el texto del botón */
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  padding: 0 16px;
+  margin-top: 6px;
+  background: black;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn:hover{ 
+  color: #2768F5; 
+}
+
+
+/* ====== BLOQUES ====== */
+.seccion2{
+  max-width:1100px;
+  margin: 0 auto;
+  padding: 28px 16px;
+  text-align: center;
+}
+.bloques{
+  display:flex;               /* FLEX */
+  flex-wrap: wrap;            /* salto de línea */
+  gap:16px;
+}
+.bloque{
+  border:1px solid #e5e5e5;
+  border-radius:8px;
+  padding:14px;
+  flex: 1 1 240px;           /* 3-4 por fila, según ancho */
+  display:flex;              /* FLEX en columna */
+  flex-direction:column;
+  gap:10px;
+}
+.bloque img{ 
+  width:100%; 
+  height:150px; 
+  object-fit:cover; 
+  border-radius:6px; 
+}
+.bloque p{ 
+  font-size:14px; 
+  color:#555; 
+}
+
+
+/* ====== PIE DE PAGINA ====== */
+.footer{
+  background-color: black;
+  color: white;
+}
+.footer-wrap{
+  max-width:100%;
+  margin:0 auto;
+  padding:18px 16px;
+  display:flex;              /* FLEX: texto izquierda, enlace derecha */
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  font-size:14px;
+}
+.footer-wrap a:hover{ 
+  color: #2768F5; 
+}
+
+
+/*=======ELEARNIG======*/
+.main-elearning{
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+}
+.elearning-titulo{
+  margin-bottom: 15px;
+}
+.elearning-texto{
+  margin-bottom: 15px;
+}
+.elearning-lista{
+  margin-left: 22px;
+  margin-bottom: 16px;
+}
+.btn-elearning{
+  display: inline-block;
+  padding: 10px 18px;
+  background: black;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 6px;
+}
+.btn-elearning:hover{ 
+  color: #2768F5; 
+}
+
+
+/*========CONTENIDO========*/
+.main-contenido{
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+}
+.contenido-titulo{
+  margin-bottom: 15px;
+}
+.contenido-texto{
+  margin-bottom: 15px;
+}
+.contenido-lista{
+  margin-left: 22px;
+}
+
+
+/* ===== FORMULARIO ===== */
+.form-reserva{
+  width: 80%;
+  margin: 0 13%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;      
+}
+.form-titulos{
+  font-weight: bold;
+}
+.form-input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+.form-correo{
+  display: flex;               /* FLEX: campo + botón */
+  gap: 10px;
+}
+.email{
+  flex: 1;                     /* ocupa todo el ancho menos el botón */
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+.btn-reserva{
+  padding: 10px 16px;
+  background: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn-reserva:hover{
+  color: #2768F5;
+}
+
