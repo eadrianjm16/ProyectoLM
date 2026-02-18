@@ -12,6 +12,63 @@ a{
   text-decoration: none; 
 }
 
+/* =========================================== */
+/* ===== MENÚ CON SUBMENÚ (mínimo) ===== */
+.menu, .menu ul 
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu 
+{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.menu > li 
+{
+  position: relative;        /* Para posicionar el submenú debajo */
+}
+
+.menu > li > a 
+{
+  display: block;
+  padding: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+/* --- Submenú --- */
+.submenu > ul 
+{
+  display: none;             /* oculto por defecto */
+  position: absolute;
+  top: 100%;                 /* bajo el padre */
+  left: 0;
+  background: rgba(0,0,0,0.6);         /* (0,0,0)fondo negro (0.6)transpariencia  */
+  border: 1px solid #333;
+  min-width: 140px;
+  padding: 6px 0;
+  z-index: 10;
+}
+
+.submenu:hover > ul 
+{
+  display: block;            /* mostrar en hover */
+}
+
+.submenu > ul > li > a 
+{
+  display: block;
+  padding: 8px 12px;
+  color: white;
+  white-space: nowrap;
+}
+/* ================================================== */
+
 
 /* ====== INDEX ====== */
 /* Cabecera */
@@ -246,4 +303,3 @@ a{
 .btn-reserva:hover{
   color: #2768F5;
 }
-
