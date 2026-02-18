@@ -1,0 +1,527 @@
+
+/* Reset y base: */
+* { 
+  margin: 0; 
+  padding: 0; 
+}
+body{ 
+  font-family: "Montserrat", sans-serif;
+}
+a{ 
+  color: black;
+  text-decoration: none; 
+}
+
+@media screen and (min-width:1025px)
+
+/* ====== INDEX ====== */
+
+{
+/*===========ANUNCIO ANIMACION=============*/
+
+#fondoanuncio {
+  width: 100%;
+  overflow: hidden;      /* Oculta lo que se sale */
+  background: orange;
+  color: #fff;
+  padding: 2px 0;
+  white-space: nowrap;   /* No permitir saltos de línea */
+}
+
+#anuncio {
+  display: inline-block;
+  padding-left: 100%;    /* Empieza fuera por la derecha */
+  animation: anuncio 12s linear infinite;
+}
+
+@keyframes anuncio {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+/*=========== IMAGEN CABECERA=============*/
+.cabecera{
+  max-width: 100%;
+  margin: 0 auto;                 /*Para centrar */
+  display: flex;                  /* FLEX */
+  align-items: center;            /* eje vertical */
+  justify-content: center;        /* separación logo / nav */
+  border-bottom:1px solid #eee;
+}
+.logo{
+  display:flex;                /* FLEX para alinear logo + texto */
+  align-items:center;
+}
+.logo img{ 
+  height:150px; 
+}
+
+
+/*===========NAVEGACION=============*/
+.nav{
+  background:white;
+  max-width: 100%;
+  margin: 0 auto;                 /*Para centrar */
+  padding: 4px;
+  display: flex;                  /* FLEX */
+  align-items: center;            /* eje vertical */
+  justify-content: center; /* separación logo / nav */
+  flex-wrap: wrap;
+}
+
+.nav a.activo, .nav a:hover{
+  color: #2768F5;
+}
+
+/* =========================================== */
+/* ===== MENÚ CON SUBMENÚ (mínimo) ===== */
+.menu, .menu li 
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu 
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.menu li 
+{
+  position: relative;        /* Para posicionar el submenú debajo */
+  
+}
+
+.menu li #categoria 
+{
+  display: block;
+  padding: 8px;
+  margin: 10px;;
+}
+
+/* --- Submenú --- */
+.submenu ul 
+{
+  display: none;             /* oculto por defecto */
+  position: absolute;
+  top: 100%;                 /* bajo el padre */
+  left: 0;
+  background: rgb(245, 245, 245);       
+  min-width: 140px;
+  padding: 6px 0;
+}
+
+.submenu a:hover ul 
+{
+  display: block;            /* mostrar en hover */
+}
+
+.submenu ul li a 
+{
+  display: block;
+  padding: 8px 12px;
+  color: black;
+  white-space: nowrap;
+}
+
+/* ====== SLIDER ====== */
+.slider1{
+  /* Si quieres fijo: width:1200px; height:600px; */
+  width: 100%;
+  max-width: 100%;
+  max-height: 700px;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Tira: se mueve completa */
+.slider2{
+  display: flex;
+  height: 100%;
+  animation: marquee 60s linear infinite; /* ajusta velocidad */
+  will-change: transform;
+}
+
+/* Cada slide ocupa exactamente el ancho visible */
+.slider2 img{
+  height: 100%;
+  object-fit: cover;       /* rellena sin deformar */
+  flex: 0 0 auto;          /* no reducir, no crecer */
+}
+
+/* Como hay 2 bloques idénticos, movemos la mitad del total */
+@keyframes marquee{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-500%); }
+}
+
+
+
+
+
+
+
+/* ====== BLOQUES ====== */
+.seccion2{
+  max-width:1100px;
+  margin: 0 auto;
+  padding: 28px 16px;
+  text-align: center;
+}
+.bloques{
+  display:flex;               /* FLEX */
+  flex-wrap: wrap;            /* salto de línea */
+  gap:16px;
+}
+.bloque{
+  border:1px solid #e5e5e5;
+  border-radius:8px;
+  padding:14px;
+  flex: 1 1 240px;           /* 3-4 por fila, según ancho */
+  display:flex;              /* FLEX en columna */
+  flex-direction:column;
+  gap:10px;
+}
+.bloque img{ 
+  width:100%; 
+  height:150px; 
+  object-fit:cover; 
+  border-radius:6px; 
+}
+.bloque p{ 
+  font-size:14px; 
+  color:#555; 
+}
+/* Botón negro con texto blanco */
+.btn{
+  display: flex;           /* FLEX para centrar el texto del botón */
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  background: darkorange;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn:hover{ 
+  color: #2768F5; 
+}
+
+
+/*======== PIE DE PAGINA =======*/
+.footer{
+  margin: 0 auto;
+  padding:50px 60px;
+  color:#000;
+  border-top:1px solid #eee;
+  max-width: 80%;
+}
+
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:40px;
+  margin-bottom:50px;
+}
+
+.footer-col h4{
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:15px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.footer-col a{
+  display:block;
+  color:#000;
+  text-decoration:none;
+  margin-bottom:8px;
+  font-size:14px;
+}
+
+.footer-col a:hover{
+  opacity:0.6;
+}
+.socials{
+  margin:0 auto;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.socials img{
+  height: 40px;
+}
+.socials a{
+  opacity:0.9;
+}
+
+.footer-middle{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:14px;
+}
+
+.payments{
+  margin-top:15px;
+}
+
+.payments img{
+  height:25px;
+  margin:0 5px;
+  opacity:0.9;
+}
+
+.footer-bottom{
+  text-align:center;
+  font-size:13px;
+  margin-top:30px;
+  color:#444;
+}
+
+.institucional img{
+  height:40px;
+  margin:0 10px;
+  vertical-align:middle;
+}
+
+.legal-text{
+  max-width:900px;
+  margin:20px auto 0;
+  line-height:1.4;
+}
+
+
+
+}
+
+
+@media screen and (min-width:0px) and (max-width:400px)
+{
+/* ====== INDEX ====== */
+/* Cabecera */
+.cabecera{
+  max-width: 100%;
+  margin: 0 auto;                 /*Para centrar */
+  display: flex;                  /* FLEX */
+  align-items: center;            /* eje vertical */
+  justify-content: center;        /* separación logo / nav */
+}
+.logo{
+  display:flex;                /* FLEX para alinear logo + texto */
+  align-items:center;
+}
+.logo img{ 
+  height:90px; 
+}
+
+
+/* Navegación */
+.nav{
+  background:darkorange;
+  max-width: 100%;
+  margin: 0 auto;                 /*Para centrar */
+  padding: 4px;
+  display: flex;                  /* FLEX */
+  flex-direction: column;
+  align-items: center;           /* eje vertical */
+  justify-items: center;    /* separación logo / nav */
+}
+.nav a{
+  padding: 8px ;
+}
+.nav a.activo, .nav a:hover{
+  color: #2768F5;
+}
+
+
+
+
+/* ====== BLOQUES ====== */
+.seccion2{
+  max-width:1100px;
+  margin: 0 auto;
+  padding: 28px 16px;
+  text-align: center;
+}
+.bloques{
+  display:flex;               /* FLEX */
+  flex-wrap: wrap;            /* salto de línea */
+  gap:16px;
+}
+.bloque{
+  border:1px solid #e5e5e5;
+  border-radius:8px;
+  padding:14px;
+  flex: 1 1 340px;           /* 3-4 por fila, según ancho */
+  display:flex;              /* FLEX en columna */
+  flex-direction:column;
+  gap:10px;
+}
+.bloque img{ 
+  width:100%; 
+  height:150px; 
+  object-fit:cover; 
+  border-radius:6px; 
+}
+.bloque p{ 
+  font-size:14px; 
+  color:#555; 
+}
+/* Botón negro con texto blanco */
+.btn{
+  display: flex;           /* FLEX para centrar el texto del botón */
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  background: darkorange;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn:hover{ 
+  color: #2768F5; 
+}
+
+
+/* ====== PIE DE PAGINA ====== */
+.footer{
+  background-color: darkorange;
+  color: white;
+}
+.footer-wrap{
+  max-width:100%;
+  margin:0 auto;
+  padding:18px 16px;
+  display:flex;              /* FLEX: texto izquierda, enlace derecha */
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  font-size:14px;
+}
+.footer-wrap a:hover{ 
+  color: #2768F5; 
+}
+}
+
+@media screen and (min-width:401px) and (max-width:1024px)
+{
+/* ====== INDEX ====== */
+/* Cabecera */
+.cabecera{
+  max-width: 100%;
+  margin: 0 auto;                 /*Para centrar */
+  display: flex;                  /* FLEX */
+  align-items: center;            /* eje vertical */
+  justify-content: center;        /* separación logo / nav */
+}
+.logo{
+  display:flex;                /* FLEX para alinear logo + texto */
+  align-items:center;
+}
+.logo img{ 
+  height:90px; 
+}
+
+
+/* Navegación */
+.nav{
+  background:darkorange;
+  max-width: 100%;
+  margin: 0 auto;                 /*Para centrar */
+  padding: 4px;
+  display: flex;                  /* FLEX */
+  align-items: center;            /* eje vertical */
+  justify-content: center;      /* separación logo / nav */
+  gap:4px;                     /* espacio entre enlaces */
+  flex-wrap: wrap;
+}
+.nav a{
+  padding: 8px ;
+}
+.nav a.activo, .nav a:hover{
+  color: #2768F5;
+}
+
+
+/* ====== BLOQUES ====== */
+.seccion2{
+  max-width:1100px;
+  margin: 0 auto;
+  padding: 28px 16px;
+  text-align: center;
+}
+.bloques{
+  display:flex;               /* FLEX */
+  flex-wrap: wrap;            /* salto de línea */
+  gap:16px;
+}
+.bloque{
+  border:1px solid #e5e5e5;
+  border-radius:8px;
+  padding:14px;
+  flex: 1 1 340px;           /* 3-4 por fila, según ancho */
+  display:flex;              /* FLEX en columna */
+  flex-direction:column;
+  gap:10px;
+}
+.bloque img{ 
+  width:100%; 
+  height:150px; 
+  object-fit:cover; 
+  border-radius:6px; 
+}
+.bloque p{ 
+  font-size:14px; 
+  color:#555; 
+}
+/* Botón negro con texto blanco */
+.btn{
+  display: flex;           /* FLEX para centrar el texto del botón */
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  background: darkorange;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn:hover{ 
+  color: #2768F5; 
+}
+
+
+/* ====== PIE DE PAGINA ====== */
+.footer{
+  background-color: darkorange;
+  color: white;
+}
+.footer-wrap{
+  max-width:100%;
+  margin:0 auto;
+  padding:18px 16px;
+  display:flex;              /* FLEX: texto izquierda, enlace derecha */
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  font-size:14px;
+}
+.footer-wrap a:hover{ 
+  color: #2768F5; 
+}
+}
+
